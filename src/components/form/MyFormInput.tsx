@@ -28,6 +28,7 @@ interface MyFormInputProps {
   radioInputClassName?: string; // Custom className for radio input
   radioImageClassName?: string; // Custom className for image
   radioItemClassName?: string; // Custom className for radio items
+  isMultiple?: boolean;
 }
 
 const MyFormInput = ({
@@ -47,10 +48,12 @@ const MyFormInput = ({
   radioInputClassName,
   radioImageClassName,
   radioItemClassName,
+  isMultiple = false,
 }: MyFormInputProps) => {
   const { control, getValues, setValue } = useFormContext();
   const inputValue = useWatch({ control, name }) ?? ""; // Ensure no undefined value
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  // const [preview, setPreview] = useState<string | null>(null); // Preview for file input
 
   useEffect(() => {
     if (onValueChange) {
@@ -66,12 +69,14 @@ const MyFormInput = ({
 
   return (
     <div className={cn("flex flex-col gap-1", className)}>
-      <label
-        htmlFor={name}
-        className={cn("text-sm font-medium", labelClassName)}
-      >
-        {label}
-      </label>
+      {label && (
+        <label
+          htmlFor={name}
+          className={cn("text-sm font-medium", labelClassName)}
+        >
+          {label}
+        </label>
+      )}
       <Controller
         name={name}
         control={control}
@@ -79,7 +84,44 @@ const MyFormInput = ({
         rules={required ? { required: `${label} is required` } : {}}
         render={({ field, fieldState: { error } }) => (
           <div className="relative">
-            {type === "textarea" ? (
+            {/* File Input Handling */}
+            {type === "file" ? (
+              <div className="flex flex-col gap-2">
+                <input
+                  type="file"
+                  id={name}
+                  accept="image/*"
+                  multiple={isMultiple}
+                  className={cn(
+                    "w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 cursor-pointer",
+                    error ? "border-red-500" : "border-gray-300",
+                    inputClassName
+                  )}
+                  onChange={(e) => {
+                    const files = e.target.files;
+                    if (files) {
+                      // setValue(name, file);
+                      if (isMultiple) {
+                        // If multiple files are allowed, store the array of files
+                        setValue(name, Array.from(files));
+                      } else {
+                        // If only one file is allowed, store the first selected file
+                        setValue(name, files[0]);
+                      }
+                    }
+                  }}
+                />
+                {/* {preview && (
+                  <Image
+                    src={preview}
+                    alt="Preview"
+                    width={100}
+                    height={100}
+                    className="rounded-md border"
+                  />
+                )} */}
+              </div>
+            ) : type === "textarea" ? (
               <textarea
                 {...field}
                 id={name}
@@ -144,6 +186,7 @@ const MyFormInput = ({
                 value={field.value ?? ""} // Ensures controlled component
               />
             )}
+            {/* Password Toggle Button */}
             {type === "password" && (
               <button
                 type="button"
@@ -157,7 +200,8 @@ const MyFormInput = ({
                 )}
               </button>
             )}
-            <div className="h-4 my-1">
+            {/* Validation Error Message */}
+            <div className="h-4 mb-1">
               {error && (
                 <small className="text-red-500 text-xs">{error.message}</small>
               )}
