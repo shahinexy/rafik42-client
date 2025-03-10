@@ -13,13 +13,14 @@ export default {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
+  				DEFAULT: '#179DFF',
+  				foreground: '#179DFF'
   			},
   			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
+  				DEFAULT: 'rgba(23, 157, 255, 0.16)',
   				foreground: 'hsl(var(--secondary-foreground))'
   			},
+			grayText: '#787878',
   			success: '#102F22',
   			info: '#D9F4F9',
   			warning: '#FAE4D0',

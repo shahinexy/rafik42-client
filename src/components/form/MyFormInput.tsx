@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Controller, useFormContext, useWatch } from "react-hook-form";
 import { cn } from "@/lib/utils";
-import { HiEye, HiEyeOff } from "react-icons/hi"; // React Icons
+import { FiEye, FiEyeOff } from "react-icons/fi"; 
 import Image from "next/image";
 
 interface RadioOption {
@@ -194,9 +194,9 @@ const MyFormInput = ({
                 className="absolute right-3 top-1/3 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
               >
                 {isPasswordVisible ? (
-                  <HiEyeOff size={20} />
+                  <FiEye size={20} />
                 ) : (
-                  <HiEye size={20} />
+                  <FiEyeOff size={20} />
                 )}
               </button>
             )}
