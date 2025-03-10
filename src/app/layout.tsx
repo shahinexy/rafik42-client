@@ -10,7 +10,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Starter kit",
+  title: "Rafik",
   description: "starter kit for nextjs with redux with persist",
 };
 
