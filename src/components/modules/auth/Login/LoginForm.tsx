@@ -41,7 +41,7 @@ const LoginForm = () => {
           </div>
 
           <div className="flex justify-center">
-            <button className="bg-primary px-20 py-3 text-white rounded-full">
+            <button className="bg-primary px-20 py-3 text-white rounded-full md:w-auto w-full">
               Get Started
             </button>
           </div>
