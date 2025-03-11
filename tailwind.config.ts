@@ -10,7 +10,7 @@ export default {
   theme: {
   	extend: {
   		colors: {
-  			background: 'hsl(var(--background))',
+  			background: '#f5f7f9',
   			foreground: 'hsl(var(--foreground))',
   			primary: {
   				DEFAULT: '#179DFF',

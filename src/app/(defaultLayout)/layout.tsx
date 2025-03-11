@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const CommonLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main>
-      <div className="max-w-[1327px] mx-auto md:py-5 md:px-0 px-3">{children}</div>
+      <div className="">{children}</div>
     </main>
   );
 };
