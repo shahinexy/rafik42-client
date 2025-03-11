@@ -1,4 +1,5 @@
 
+import FooterNav from "@/components/shared/FooterNav";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,7 +10,10 @@ export const metadata: Metadata = {
 const CommonLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main>
-      <div className="">{children}</div>
+      <div className="relative">{children}</div>
+      <div className="fixed bottom-0 w-full">
+        <FooterNav />
+      </div>
     </main>
   );
 };

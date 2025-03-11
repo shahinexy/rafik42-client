@@ -5,10 +5,14 @@ import vector1 from "../../../../public/images/Vector1.png";
 import vector2 from "../../../../public/images/Vector2.png";
 import vector3 from "../../../../public/images/Vector3.png";
 import vector4 from "../../../../public/images/Vector4.png";
+import MyBtn from "../common/MyBtn";
 
 const CommonSetupAcc = () => {
   return (
-    <div className="flex flex-col md:gap-5 gap-3">
+    <div
+      className="flex flex-col min-h-[calc(100vh-200px)]
+ md:gap-5 gap-3"
+    >
       <h2 className="font-semibold md:text-3xl text-xl">
         Please select your account
       </h2>
@@ -61,6 +65,10 @@ const CommonSetupAcc = () => {
           />
         </div>
       </Link>
+
+      <div className="flex justify-center mt-auto">
+        <MyBtn name="Continue" />
+      </div>
     </div>
   );
 };

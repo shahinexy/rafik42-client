@@ -1,14 +1,14 @@
 import CreateTenantForm from "@/components/modules/setupAccount/CreateForm/CreateTenantForm";
-import CustomContainer from "@/components/shared/CustomContainer";
+import MyContainer from "@/components/shared/MyContainer";
 import PageHeader from "@/components/shared/PageHeader";
 
 const TenantPage = () => {
   return (
     <div>
       <PageHeader title={"Tenant Account"} path="/set-up-account" />
-      <CustomContainer>
+      <MyContainer>
         <CreateTenantForm />
-      </CustomContainer>
+      </MyContainer>
     </div>
   );
 };

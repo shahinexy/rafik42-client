@@ -2,6 +2,7 @@
 import MyFormInput from "@/components/form/MyFormInput";
 import MyFormWrapper from "@/components/form/MyFormWrapper";
 import { FieldValues } from "react-hook-form";
+import MyBtn from "../../common/MyBtn";
 
 const CreateLandlordForm = () => {
   const formHandler = (data: FieldValues) => {
@@ -25,6 +26,10 @@ const CreateLandlordForm = () => {
           type="text"
           placeholder="Enter Mobile"
         />
+
+        <div className="flex justify-center md:mt-40 mt-20">
+          <MyBtn name="Continue" />
+        </div>
       </MyFormWrapper>
     </div>
   );

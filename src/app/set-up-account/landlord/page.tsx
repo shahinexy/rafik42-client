@@ -1,5 +1,5 @@
 import CreateLandlordForm from "@/components/modules/setupAccount/CreateForm/CreateLandlordForm";
-import CustomContainer from "@/components/shared/CustomContainer";
+import MyContainer from "@/components/shared/MyContainer";
 import PageHeader from "@/components/shared/PageHeader";
 import React from "react";
 
@@ -7,9 +7,9 @@ const LandlordPage = () => {
   return (
     <div>
       <PageHeader title={"Landlord Account"} path="/set-up-account" />
-      <CustomContainer>
+      <MyContainer>
         <CreateLandlordForm />
-      </CustomContainer>
+      </MyContainer>
     </div>
   );
 };

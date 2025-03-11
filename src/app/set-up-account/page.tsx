@@ -1,5 +1,5 @@
 import CommonSetupAcc from "@/components/modules/setupAccount/CommonSetupAcc";
-import CustomContainer from "@/components/shared/CustomContainer";
+import MyContainer from "@/components/shared/MyContainer";
 import PageHeader from "@/components/shared/PageHeader";
 
 const AccountSetUppage = () => {
@@ -7,9 +7,9 @@ const AccountSetUppage = () => {
     <div>
       <PageHeader title={"Set up Account"} path={"/"} />
 
-      <CustomContainer>
+      <MyContainer>
         <CommonSetupAcc />
-      </CustomContainer>
+      </MyContainer>
     </div>
   );
 };
